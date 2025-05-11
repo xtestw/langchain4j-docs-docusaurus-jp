@@ -31,7 +31,7 @@ export default function Home() {
     const {siteConfig} = useDocusaurusContext();
     return (<Layout
         title={`${siteConfig.title}`}
-        description="LangChain4j 中文文档 - 为你的 Java 应用赋能大模型能力的官方中文指南">
+        description="LangChain4j 日本語ドキュメント - 大規模モデル機能を備えた Java アプリケーションを強化するための公式中国語ガイド">
         <HomepageHeader/>
         <main>
             <HomepageFeatures/>

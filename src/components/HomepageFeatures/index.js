@@ -4,21 +4,20 @@ import styles from './styles.module.css';
 
 const FeatureList = [
     {
-        title: '轻松与大语言模型和向量存储交互',
+        title: '大規模な言語モデルやベクトルストアと簡単に対話できます',
         Svg: require('@site/static/img/llm-logos.svg').default,
         description: (
             <>
-                所有主要的商业和开源大语言模型及向量存储都可以通过统一的 API 轻松访问，使您能够构建聊天机器人、智能助手等应用。
+              すべての主要な商用およびオープンソースの大規模言語モデルとベクトル ストアは、統合された API を通じて簡単にアクセスできるため、チャットボットやインテリジェント アシスタントなどのアプリケーションを構築できます。
             </>
         ),
     },
     {
-        title: '专为 Java 量身定制',
+        title: 'Java向けにカスタマイズ',
         Svg: require('@site/static/img/framework-logos.svg').default,
         description: (
             <>
-                得益于 Quarkus 和 Spring Boot 集成，可以顺畅地整合到您的 Java 应用程序中。大语言模型和 Java 之间实现了双向集成：您可以从 Java 调用大语言模型，也可以让大语言模型反过来调用您的 Java 代码。
-            </>
+    Quarkus と Spring Boot の統合により、Java アプリケーションにスムーズに統合できます。 Big Language Model と Java の間には双方向の統合があります。つまり、Java から Big Language Model を呼び出すことができ、Big Language Model は Java コードを呼び出すことができます。            </>
         ),
     },
     {
@@ -26,8 +25,8 @@ const FeatureList = [
         Svg: require('@site/static/img/functionality-logos.svg').default,
         description: (
             <>
-                我们丰富的工具箱为常见的大语言模型操作提供了广泛的工具，从底层的提示模板、聊天记忆管理和输出解析，到高级模式如代理和检索增强生成（RAG）。
-            </>
+           当社の豊富なツールボックスには、低レベルのプロンプト テンプレート、チャット メモリ管理、出力解析から、代理生成や検索拡張生成 (RAG) などの高度なパターンまで、一般的な大規模言語モデル操作のための幅広いツールが用意されています。
+                       </>
         ),
     }
 ];
