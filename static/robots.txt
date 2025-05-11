@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 指向网站地图
+Sitemap: https://docs-jp.langchain4j.info/sitemap.xml 
