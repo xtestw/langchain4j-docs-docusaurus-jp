@@ -52,6 +52,11 @@ const config = {
         {
             src: '/js/gtag.js',
         },
+        {
+            src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1217509255829092',
+            async: true,
+            crossOrigin: 'anonymous',
+        },
     ],
 
     presets: [
@@ -232,6 +237,7 @@ const config = {
         mermaid: true,
     },
     themes: ['@docusaurus/theme-mermaid'],
+    clientModules: [require.resolve('./src/client-modules/adsense.js')],
     plugins: [
         // require.resolve("docusaurus-lunr-search"),
         // [

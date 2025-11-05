@@ -38,3 +38,43 @@ header > h1,
 h2 > a {
     font-size: 2rem !important;
 }
+
+/* AdSense sidebar styles */
+#adsense-sidebar {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    max-width: 300px;
+    z-index: 100;
+}
+
+.adsense-container {
+    width: 100%;
+    background: var(--ifm-background-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hide ad on mobile devices */
+@media (max-width: 996px) {
+    #adsense-sidebar {
+        display: none !important;
+    }
+}
+
+/* Ensure ad doesn't overlap with content on smaller screens */
+@media (min-width: 997px) and (max-width: 1400px) {
+    #adsense-sidebar {
+        width: 250px;
+        right: 10px;
+    }
+}
+
+/* Adjust for very large screens */
+@media (min-width: 1401px) {
+    #adsense-sidebar {
+        right: calc((100% - 1400px) / 2 + 20px);
+    }
+}

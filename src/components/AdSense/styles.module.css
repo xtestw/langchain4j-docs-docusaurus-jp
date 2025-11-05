@@ -1,0 +1,26 @@
+.adContainer {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+    width: 300px;
+    max-width: 300px;
+    z-index: 100;
+    background: var(--ifm-background-color);
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 996px) {
+    .adContainer {
+        display: none;
+    }
+}
+
+@media (min-width: 997px) and (max-width: 1400px) {
+    .adContainer {
+        width: 250px;
+        right: 10px;
+    }
+}
+
