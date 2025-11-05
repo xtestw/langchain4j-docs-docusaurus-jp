@@ -42,11 +42,11 @@ h2 > a {
 /* AdSense sidebar styles */
 #adsense-sidebar {
     position: fixed;
-    top: 60px;
+    top: 80px; /* Default position, will be updated by JavaScript based on TOC position */
     right: 20px;
     width: 300px;
     max-width: 300px;
-    z-index: 100;
+    z-index: 99; /* Lower than TOC to ensure it stays below */
 }
 
 .adsense-container {
