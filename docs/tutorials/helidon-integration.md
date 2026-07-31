@@ -4,36 +4,34 @@ sidebar_position: 29
 
 # Helidon 統合
 
-[Helidon](https://helidon.io/)はLangChain4j統合モジュールを提供しており、Helidonのプログラミングモデルとスタイルを活用しながらAI駆動アプリケーションの構築を簡素化します。
+[Helidon](https://helidon.io/) は、Helidon のプログラミングモデルとスタイルを活かしつつ、AI 駆動アプリケーションの構築を簡素化する LangChain4j 統合モジュールを提供しています。
 
-LangChain4j統合機能の詳細な説明と使用方法は[こちら](https://helidon.io/docs/latest/se/integrations/langchain4j/langchain4j)で確認できます。
+LangChain4j 統合機能の詳細な説明と使い方は[こちら](https://helidon.io/docs/latest/se/integrations/langchain4j/langchain4j)にあります。
 
-## サポートされているバージョン
+## サポートされるバージョン
 
-HelidonのLangChain4j統合にはJava 21とHelidon 4.2が必要です。
+Helidon の LangChain4j 統合には Java 21 と Helidon 4.2 が必要です。
 
 ## 例
 
-私たちはいくつかのサンプルアプリケーションを作成しました。これらのサンプルはHelidonアプリケーションでLangChain4jを使用するすべての側面を示しています。
+探索できるサンプルアプリケーションをいくつか用意しています。これらのサンプルは、Helidon アプリケーションで LangChain4j を使う各方面を示します。
 
-### コーヒーショップアシスタント
-コーヒーショップアシスタントは、コーヒーショップ向けのAI駆動アシスタントの構築方法を紹介するデモアプリケーションです。このアシスタントはメニューに関する質問に答え、推奨事項を提供し、注文を作成できます。JSONファイルから初期化された埋め込みストアを利用しています。
+### Coffee Shop Assistant
+Coffee Shop Assistant は、コーヒーショップ向けの AI アシスタント構築を示すデモアプリケーションです。このアシスタントはメニューに関する質問への回答、おすすめの提示、注文の作成ができます。JSON ファイルから初期化された埋め込みストアを利用します。
 
-主な特徴：
-- OpenAIチャットモデルとの統合
-- 埋め込みモデル、埋め込みストア、インジェスター、コンテンツリトリーバーの活用
-- 依存性注入のためのHelidon Inject
-- JSONファイルからの埋め込みストアの初期化
-- 対話を強化するためのコールバック関数のサポート
+主な機能：
+- OpenAI チャットモデルとの統合
+- 埋め込みモデル、埋め込みストア、ingestor、コンテンツリトリーバーの利用
+- 依存性注入のための Helidon Inject
+- JSON ファイルからの埋め込みストア初期化
+- 対話を強化するコールバック関数のサポート
 
-詳細はこちら：
-- [Helidon SE用コーヒーショップアシスタント](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/langchain4j/coffee-shop-assistant-se)
-- [Helidon MP用コーヒーショップアシスタント](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/langchain4j/coffee-shop-assistant-mp)
+確認する：
+- [Helidon SE 向け Coffee Shop Assistant](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/langchain4j/coffee-shop-assistant-se)
+- [Helidon MP 向け Coffee Shop Assistant](https://github.com/helidon-io/helidon-examples/tree/helidon-4.x/examples/integrations/langchain4j/coffee-shop-assistant-mp)
 
-### ハンズオンラボ
+### Hands-on Lab
 
-コーヒーショップアシスタントの構築方法についてのステップバイステップの指示を含むハンズオンラボも提供しています：
+Coffee Shop Assistant の構築手順を示す Hands-on Lab も提供しています：
 
-[HOL：HelidonとLangChain4jを使用したAI駆動アプリケーションの構築](https://github.com/helidon-io/helidon-labs/tree/main/hols/langchain4j)
-
-
+[HOL: Helidon と LangChain4j で AI 駆動アプリケーションを構築する](https://github.com/helidon-io/helidon-labs/tree/main/hols/langchain4j)

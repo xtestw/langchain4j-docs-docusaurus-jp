@@ -68,14 +68,14 @@ gcloud auth application-default login
 <dependency>
   <groupId>dev.langchain4j</groupId>
   <artifactId>langchain4j-vertex-ai-gemini</artifactId>
-  <version>1.0.0-beta4</version>
+  <version>1.18.1-beta28</version>
 </dependency>
 ```
 
 またはプロジェクトの`build.gradle`に：
 
 ```groovy
-implementation 'dev.langchain4j:langchain4j-vertex-ai-gemini:1.0.0-beta4'
+implementation 'dev.langchain4j:langchain4j-vertex-ai-gemini:1.18.1-beta28'
 ```
 
 ### サンプルコードを試す：
@@ -93,7 +93,7 @@ import dev.langchain4j.data.message.TextContent;
 import dev.langchain4j.data.message.UserMessage;
 import dev.langchain4j.model.chat.ChatModel;
 import dev.langchain4j.model.output.Response;
-import dev.langchain4j.model.vertexai.VertexAiGeminiChatModel;
+import dev.langchain4j.model.vertexai.gemini.VertexAiGeminiChatModel;
 
 public class GeminiProVisionWithImageInput {
 
@@ -183,27 +183,28 @@ Caused by: io.grpc.StatusRuntimeException:
 
 ```java
 ChatModel model = VertexAiGeminiChatModel.builder()
-    .project(PROJECT_ID)        // Google CloudプロジェクトのプロジェクトID
-    .location(LOCATION)         // AI推論が行われる地域
-    .modelName(MODEL_NAME)      // 使用するモデル
-    .logRequests(true)          // 入力リクエストをログに記録
-    .logResponses(true)         // 出力レスポンスをログに記録
-    .maxOutputTokens(8192)      // 生成する最大トークン数（最大8192）
-    .temperature(0.7)           // 温度（0から2の間）
-    .topP(0.95)                 // topP（0から1の間）- 最も確率の高いトークンの累積確率
-    .topK(3)                    // topK（正の整数）- 最も確率の高いトークンの中から選択
-    .seed(1234)                 // 乱数生成器のシード
-    .maxRetries(2)              // 最大再試行回数
-    .responseMimeType("application/json") // JSON構造化出力を取得するため
-    .responseSchema(/*...*/)    // 提供されたスキーマに従った構造化出力
-    .safetySettings(/*...*/)    // 不適切なコンテンツをフィルタリングするための安全設定
-    .useGoogleSearch(true)      // Google検索結果で回答を根拠付ける
-    .vertexSearchDatastore(name)// カスタムVertex AI Search データストアからのデータ
-                                // バックドキュメントで回答を根拠付ける
-    .toolCallingMode(/*...*/)   // AUTO（自動）、ANY（関数リストから）、NONE
-    .allowedFunctionNames(/*...*/) // ANYツール呼び出しモードを使用する場合、
-                                // 呼び出し可能な関数名を指定
-    .listeners(/*...*/)         // モデルイベントを受信するリスナーのリスト
+    .project(PROJECT_ID)        // your Google Cloud project ID
+    .location(LOCATION)         // the region where AI inference should take place
+    .modelName(MODEL_NAME)      // the model used
+    .logRequests(true)          // log input requests
+    .logResponses(true)         // log output responses
+    .maxOutputTokens(8192)      // the maximum number of tokens to generate (up to 8192)
+    .temperature(0.7)           // temperature (between 0 and 2)
+    .topP(0.95)                 // topP (between 0 and 1) — cumulative probability of the most probable tokens
+    .topK(3)                    // topK (positive integer) — pick a token among the most probable ones
+    .seed(1234)                 // seed for the random number generator
+    .maxRetries(2)              // maximum number of retries
+    .responseMimeType("application/json") // to get JSON structured outputs
+    .responseSchema(/*...*/)    // structured output following the provided schema
+    .safetySettings(/*...*/)    // specify safety settings to filter inappropriate content
+    .useGoogleSearch(true)      // to ground responses with Google Search results
+    .vertexSearchDatastore(name)// to ground responses with data backed documents 
+                                // from a custom Vertex AI Search datastore
+    .toolCallingMode(/*...*/)   // AUTO (automatic), ANY (from a list of functions), NONE
+    .allowedFunctionNames(/*...*/) // when using ANY tool calling mode, 
+                                // specify the allowed function names to be called
+    .listeners(/*...*/)         // list of listeners to receive model events
+    .credentials(credentials)   // custom Google Cloud credentials    
     .build();
 ```
 
@@ -476,6 +477,25 @@ var model = VertexAiGeminiChatModel.builder()
     .build();
 ```
 
+### カスタム認証
+
+カスタムのGoogle Cloud認証情報を指定できます：
+
+```java
+import com.google.auth.oauth2.GoogleCredentials;
+import java.io.FileInputStream;
+
+GoogleCredentials credentials = GoogleCredentials.fromStream(
+    new FileInputStream("path/to/service-account-key.json"));
+
+var model = VertexAiGeminiChatModel.builder()
+    .project(PROJECT_ID)
+    .location(LOCATION)
+    .modelName("gemini-1.5-flash-001")
+    .credentials(credentials)
+    .build();
+```
+
 ## 参考資料
 
 [利用可能なロケーション](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/locations#available-regions)
@@ -486,3 +506,7 @@ var model = VertexAiGeminiChatModel.builder()
 ## 例
 
 - [Google Vertex AI Gemini の例](https://github.com/langchain4j/langchain4j-examples/tree/main/vertex-ai-gemini-examples/src/main/java)
+
+
+
+

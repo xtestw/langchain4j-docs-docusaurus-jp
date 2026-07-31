@@ -75,7 +75,7 @@ LangChain4jでDashScopeを通常のJavaまたはSpring Bootアプリケーショ
         <groupId>dev.langchain4j</groupId>
         <artifactId>langchain4j-community-bom</artifactId>
         <version>${latest version here}</version>
-        <typ>pom</typ>
+        <type>pom</type>
         <scope>import</scope>
     </dependency>
 </dependencyManagement>

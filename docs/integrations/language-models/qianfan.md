@@ -76,7 +76,7 @@ LangChain4jでは、通常のJavaまたはSpring Bootアプリケーションで
         <groupId>dev.langchain4j</groupId>
         <artifactId>langchain4j-community-bom</artifactId>
         <version>${latest version here}</version>
-        <typ>pom</typ>
+        <type>pom</type>
         <scope>import</scope>
     </dependency>
 </dependencyManagement>
@@ -337,7 +337,7 @@ LangChain4jには「Easy RAG」機能があり、RAGを始めるのをできる�
 <dependency>
     <groupId>dev.langchain4j</groupId>
     <artifactId>langchain4j-easy-rag</artifactId>
-    <version>1.0.0-beta4</version>
+    <version>1.18.1-beta28</version>
 </dependency>
 ```
 - 使用方法
